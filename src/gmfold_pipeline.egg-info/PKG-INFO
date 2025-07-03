@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: gmfold_pipeline
+Version: 0.1
+Summary: Pipeline for running GMfold on DNA/RNA SELEX data.
+Author: Justin Baker
+Author-email: baker@math.utah.edu

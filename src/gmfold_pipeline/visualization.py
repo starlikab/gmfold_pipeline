@@ -9,7 +9,7 @@ def plot_2d_scatter(X_embedded, cluster_labels):
     non_noise_labels = [label for label in unique_labels if label != -1]
     colors = plt.cm.tab20(np.linspace(0, 1, len(unique_labels)))
 
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(7, 6))
 
     # Scatter plot by cluster label
     for idx, label in enumerate(unique_labels):

@@ -1,8 +1,7 @@
 # Function to run LDA
 from sklearn.decomposition import LatentDirichletAllocation
 
-def run_lda( X ):
-    n_components = 25
+def run_lda( X, n_components ):
     learning_method = 'online'
     lda = LatentDirichletAllocation(
         n_components=n_components,

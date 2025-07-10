@@ -4,12 +4,12 @@ try:
     from forgi.graph.bulge_graph import BulgeGraph
     import forgi.visual.mplotlib as fvm
     import RNA
-    from gmfold import gmfold, gm_dot_bracket
+    from GMfold import gmfold, gm_dot_bracket
 except ImportError as e:
     missing_package = str(e).split("'")[1]
     raise ImportError(
         f"Missing required package: '{missing_package}'.\n"
-        f"Please install it using:\n\n    pip install {missing_package}"
+        f"Please install it."
     )
 
 

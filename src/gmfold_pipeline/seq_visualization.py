@@ -4,6 +4,7 @@ try:
     from forgi.graph.bulge_graph import BulgeGraph
     import forgi.visual.mplotlib as fvm
     import RNA
+    from gmfold import gmfold, gm_dot_bracket
 except ImportError as e:
     missing_package = str(e).split("'")[1]
     raise ImportError(

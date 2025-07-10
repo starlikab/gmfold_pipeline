@@ -33,29 +33,20 @@ def evaluate_spectral_clustering(X, cluster_range):
             ch_scores.append(None)
             db_scores.append(None)
 
-    # return silhouette_scores, ch_scores, db_scores
-
-    # Range of clusters to test
-    # cluster_range = range(5, 75, 5)
-    # sil_scores, ch_scores, db_scores = evaluate_spectral_clustering(kmer_topic, cluster_range)
-
     # Plot the results
     plt.figure(figsize=(12, 4))
 
     plt.subplot(1, 3, 1)
-    # plt.ylim(-0.3, 0.15) # set y-lims for consistency when re-runnning plots with different # of topics
     plt.plot(cluster_range, sil_scores, marker='o')
     plt.title('Silhouette Score')
     plt.xlabel('Number of Clusters')
 
     plt.subplot(1, 3, 2)
-    # plt.ylim(0, 128)
     plt.plot(cluster_range, ch_scores, marker='o', color='green')
     plt.title('Calinski-Harabasz Score')
     plt.xlabel('Number of Clusters')
 
     plt.subplot(1, 3, 3)
-    # plt.ylim(1, 2.9)
     plt.plot(cluster_range, db_scores, marker='o', color='red')
     plt.title('Davies-Bouldin Score')
     plt.xlabel('Number of Clusters')

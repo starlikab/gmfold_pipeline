@@ -49,7 +49,7 @@ def visualize_sequences(df, indices):
     plt.tight_layout()
     plt.show()
 
-def highlight_shared_characters(indices):
+def highlight_shared_characters(df, indices):
     # Get selected sequences
     seqs = [df['Sequence'][i] for i in indices]
 

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import string
 
-def plot_2d_scatter(X_embedded, cluster_labels):
+def plot_2d_scatter(X_embedded, cluster_labels, title=''):
 
     # Prepare color map for clusters (excluding noise)
     unique_labels = np.unique(cluster_labels)
@@ -17,7 +17,7 @@ def plot_2d_scatter(X_embedded, cluster_labels):
         label_str = f"Cluster {label}" if label != -1 else "Noise"
 
         # Set light grey color for noise
-        color = colors[idx] if label != -1 else '#bcbcbc'
+        color = colors[idx] if label != -1 else '#c8c8c8'
 
         plt.scatter(X_embedded[indices, 0], X_embedded[indices, 1],
                     s=50, alpha=0.7, color=color, label=label_str)
@@ -30,20 +30,20 @@ def plot_2d_scatter(X_embedded, cluster_labels):
                      textcoords="offset points", xytext=(0, 5), ha='center')
 
     # Final plot formatting
-    # plt.title("Clustered Aptamers (HDBSCAN or Other Clustering)", fontsize=14)
+    plt.title(title, fontsize=20)
     plt.tight_layout()
     plt.grid(True)
     plt.axis('off')
     plt.show()
 
     
-def plot_cluster_counts(cluster_labels):
+def plot_cluster_counts(cluster_labels, title=''):
     # Sort all labels in increasing order
     unique_labels = sorted(set(cluster_labels))
 
     # Find the clusters to which the first five most common aptamers belong
     # Note: df -> topic -> cluster_labels -> high_light clusters retains the fact that the first aptamers are the top counts
-    highlight_indices = range(5)
+    highlight_indices = range(4)
     highlight_clusters = set(cluster_labels[i] for i in highlight_indices)
 
     # Count occurrences of aptamers in each cluster
@@ -78,7 +78,8 @@ def plot_cluster_counts(cluster_labels):
     temp_labels = [f'C$_{{{i+1}}}$' for i in unique_labels]
     # Change the font size
     plt.xticks(x_positions, temp_labels, fontsize=15)
+    plt.title(title, fontsize=25)
     plt.xlabel('Clusters', fontsize=20)
-    plt.ylabel('Number of sequences', fontsize=30)
+    plt.ylabel('Number of sequences', fontsize=20)
     plt.tight_layout()
     plt.show()

@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import hdbscan
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
+import matplotlib.pyplot as plt
 
 def spect_clustering(X, n_clusters):
     # Run clustering

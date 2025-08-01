@@ -185,5 +185,6 @@ def get_proportion_matrix(df):
         seq_face = seq_face_generator(seq, face_to_index, face_to_bins)
         proportion = apta_proportions(4, seq, seq_face, words)
         matrix[i, :] = proportion  # assign the vector to the row
+    
+    return matrix, feature_names
 
-    return matrix
